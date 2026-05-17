@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="wantmony — 一个大学生分享极简理财和省钱技巧的个人博客。">
+  <title>wantmony — 大学生极简理财博客</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦐</text></svg>">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">want<span>mony</span></a>
+      <button class="menu-btn" aria-label="菜单">☰</button>
+      <ul class="nav-links">
+        <li><a href="./">首页</a></li>
+        <li><a href="./articles.html">文章</a></li>
+        <li><a href="./about.html">关于我</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主内容 -->
+  <main class="container">
+
+    <!-- 个人介绍区 -->
+    <section class="hero">
+      <div class="hero-avatar">🦐</div>
+      <h1>你好，我是虾虾</h1>
+      <p class="tagline">一个努力学习省钱的大学生 🎒</p>
+      <div class="bio">
+        月生活费1500，却想存钱看世界。<br>
+        这里记录我的极简理财实验、省钱小技巧和大学生活感悟。<br>
+        欢迎和我一起，把每一分钱都花在真正值得的地方 ✨
+      </div>
+      <div class="social-links">
+        <a href="./about.html">📖 了解更多 →</a>
+      </div>
+    </section>
+
+    <!-- 文章列表区 -->
+    <section>
+      <h2 class="section-title">📝 最新文章</h2>
+      <div id="article-list-container" class="article-list">
+        <div class="loading">加载中...</div>
+      </div>
+      <div style="text-align:center;padding-bottom:40px;">
+        <a href="./articles.html" style="color:#2563eb;font-size:14px;font-weight:500;">查看全部文章 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>© 2026 wantmony · 由 🦐 用心维护</p>
+  </footer>
+
+  <script src="js/articles-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
