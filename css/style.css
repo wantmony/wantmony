@@ -118,6 +118,58 @@ img {
   text-align: center;
 }
 
+.hero-with-bg {
+  position: relative;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 32px;
+  min-height: 480px;
+  background-image: url('../images/bg-hero.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 24px 60px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .tagline {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-content .bio {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content .social-links a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-content .social-links a:hover {
+  color: #fff;
+}
+
 .hero-avatar {
   width: 100px;
   height: 100px;
@@ -140,7 +192,6 @@ img {
 
 .hero .tagline {
   font-size: 16px;
-  color: #64748b;
   margin-bottom: 20px;
 }
 
@@ -148,7 +199,6 @@ img {
   max-width: 600px;
   margin: 0 auto 24px;
   font-size: 15px;
-  color: #475569;
   line-height: 1.8;
 }
 
@@ -163,12 +213,7 @@ img {
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: #64748b;
   transition: color 0.2s;
-}
-
-.hero .social-links a:hover {
-  color: #2563eb;
 }
 
 /* === 首页快捷入口（计划/打卡） === */
