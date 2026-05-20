@@ -1,93 +1,295 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="wantmony — 一个大学生分享极简理财和省钱技巧的个人博客。">
-  <title>wantmony — 大学生极简理财博客</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦐</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI智能代服务 | 高效 · 专业 · 可靠</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+<style>
+:root{--b50:#eff6ff;--b1:#dbeafe;--b2:#bfdbfe;--b3:#93c5fd;--b4:#60a5fa;--b5:#3b82f6;--b6:#2563eb;--b7:#1d4ed8;--b8:#1e40af;--b9:#1e3a5f;--g:linear-gradient(135deg,#1e3a5f 0%,#2563eb 50%,#60a5fa 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:#f0f7ff;color:#1e293b;scroll-behavior:smooth}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--b50)}
+::-webkit-scrollbar-thumb{background:var(--b3);border-radius:3px}
+.navbar{background:rgba(30,58,95,0.95);backdrop-filter:blur(10px);position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
+.navbar.s{background:rgba(30,58,95,0.98);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.hero{background:var(--g);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(96,165,250,.15)0%,transparent 60%);animation:hp 6s ease-in-out infinite}
+@keyframes hp{0%,100%{transform:scale(1)rotate(0deg)}50%{transform:scale(1.1)rotate(3deg)}}
+.pt{position:absolute;width:4px;height:4px;background:rgba(255,255,255,.4);border-radius:50%;animation:fl linear infinite}
+@keyframes fl{0%{transform:translateY(100vh)scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh)scale(1);opacity:0}}
+.sc{transition:all .4s cubic-bezier(.4,0,.2,1);background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border:1px solid rgba(59,130,246,.1)}
+.sc:hover{transform:translateY(-8px)scale(1.02);box-shadow:0 20px 40px rgba(37,99,235,.2);border-color:var(--b4)}
+.cb{position:fixed;bottom:28px;right:28px;z-index:1000;width:60px;height:60px;border-radius:50%;background:var(--g);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(37,99,235,.4);transition:all .3s;display:flex;align-items:center;justify-content:center;font-size:24px}
+.cb:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,99,235,.5)}
+.cb .d{position:absolute;top:2px;right:2px;width:14px;height:14px;background:#ef4444;border-radius:50%;border:2px solid #fff;animation:pd 2s infinite}
+@keyframes pd{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.cw{position:fixed;bottom:100px;right:28px;z-index:999;width:380px;height:580px;background:#fff;border-radius:20px;box-shadow:0 10px 60px rgba(0,0,0,.15);display:none;flex-direction:column;overflow:hidden;animation:si .3s ease;border:1px solid rgba(59,130,246,.2)}
+.cw.o{display:flex}
+@keyframes si{from{opacity:0;transform:translateY(20px)scale(.95)}to{opacity:1;transform:translateY(0)scale(1)}}
+.ch{background:var(--g);color:#fff;padding:18px 20px;display:flex;align-items:center;gap:12px}
+.ch .av{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:20px}
+.ch .xb{margin-left:auto;background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:.7}
+.ch .xb:hover{opacity:1}
+.cm{flex:1;padding:16px;overflow-y:auto;background:#f8faff}
+.m{margin-bottom:14px;display:flex;gap:8px;animation:mi .3s ease}
+@keyframes mi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.m.b{align-items:flex-start}.m.u{flex-direction:row-reverse}
+.m .bb{max-width:75%;padding:10px 16px;border-radius:16px;font-size:14px;line-height:1.6}
+.m.b .bb{background:#fff;border:1px solid #e8f0fe;border-bottom-left-radius:4px;color:#1e293b;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.m.u .bb{background:var(--b5);color:#fff;border-bottom-right-radius:4px}
+.m .ai{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.m.b .ai{background:var(--b1);color:var(--b6)}
+.m.u .ai{background:var(--b6);color:#fff}
+.ob{display:inline-block;padding:6px 16px;margin:3px;border:1px solid var(--b3);border-radius:20px;background:#fff;color:var(--b6);cursor:pointer;font-size:13px;transition:all .2s}
+.ob:hover{background:var(--b5);color:#fff;border-color:var(--b5);transform:scale(1.05)}
+.ci{padding:12px 16px;border-top:1px solid #eee;display:flex;gap:8px;background:#fff}
+.ci input{flex:1;padding:10px 14px;border:1px solid #ddd;border-radius:24px;outline:none;font-size:14px}
+.ci input:focus{border-color:var(--b4)}
+.ci button{width:42px;height:42px;border-radius:50%;background:var(--g);color:#fff;border:none;cursor:pointer;font-size:16px}
+.ci button:hover{transform:scale(1.1)}
+.ty span{display:inline-block;width:8px;height:8px;background:var(--b3);border-radius:50%;animation:ty 1.4s infinite}
+.ty span:nth-child(2){animation-delay:.2s}.ty span:nth-child(3){animation-delay:.4s}
+@keyframes ty{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.scard{background:#fff;border-radius:16px;padding:24px;border:1px solid rgba(59,130,246,.1)}
+.scard:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(37,99,235,.12)}
+.cbox{background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(59,130,246,.1)}
+.fi{opacity:0;transform:translateY(20px);transition:all .6s ease}
+.fi.v{opacity:1;transform:translateY(0)}
+.le{background:#f8faff;border-radius:8px;margin-bottom:6px;border-left:3px solid var(--b4);padding:8px 12px;font-size:13px;color:#475569}
+.le time{color:var(--b5);font-weight:500;margin-right:8px}
+@media(max-width:768px){.cw{width:calc(100% - 24px);height:480px;bottom:90px;right:12px;left:12px}.cb{bottom:20px;right:20px;width:52px;height:52px;font-size:20px}}
+</style>
 </head>
 <body>
 
-  <!-- 导航栏 -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="./" class="nav-logo">want<span>mony</span></a>
-      <button class="menu-btn" aria-label="菜单">☰</button>
-      <ul class="nav-links">
-        <li><a href="./">首页</a></li>
-        <li><a href="./articles.html">文章</a></li>
-        <li><a href="./about.html">关于我</a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- 导航栏 -->
+<nav class="navbar" id="navbar">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<a href="#hero" class="flex items-center gap-2 text-white no-underline">
+<i class="fas fa-robot text-2xl" style="color:#60a5fa;"></i><span class="text-xl font-bold">虾米AI代服务</span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a href="#services" class="text-white/80 hover:text-white no-underline text-sm font-medium">服务项目</a>
+<a href="#pricing" class="text-white/80 hover:text-white no-underline text-sm font-medium">价格表</a>
+<a href="#about" class="text-white/80 hover:text-white no-underline text-sm font-medium">关于我</a>
+<a href="#admin" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium no-underline"><i class="fas fa-chart-simple mr-1"></i>管理后台</a>
+</div>
+<button id="mBtn" class="md:hidden text-white text-xl bg-transparent border-0 cursor-pointer"><i class="fas fa-bars"></i></button>
+</div>
+<div id="mMenu" class="md:hidden hidden bg-blue-900/95 px-4 pb-4">
+<a href="#services" class="block py-2 text-white/80 hover:text-white no-underline text-sm">服务项目</a>
+<a href="#pricing" class="block py-2 text-white/80 hover:text-white no-underline text-sm">价格表</a>
+<a href="#about" class="block py-2 text-white/80 hover:text-white no-underline text-sm">关于我</a>
+<a href="#admin" class="block py-2 text-blue-300 hover:text-white no-underline text-sm"><i class="fas fa-chart-simple mr-1"></i>管理后台</a>
+</div>
+</nav>
 
-  <!-- 主内容 -->
-  <main class="container">
+<!-- Hero -->
+<section class="hero min-h-screen flex items-center justify-center pt-16" id="hero">
+<div id="particles"></div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+<div class="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white/90 text-sm mb-6 backdrop-blur-sm border border-white/20">&#x1f680; AI赋能 &middot; 高效交付</div>
+<h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">让AI成为你的<br class="md:hidden"><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">超级生产力</span></h1>
+<p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">PPT代做 &middot; 数据分析 &middot; 文案撰写 &mdash;&mdash; 用AI技术为你节省80%的时间<br>专业交付，不满意退款</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="#pricing" class="inline-flex items-center gap-2 bg-white text-blue-700 px-8 py-3.5 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all no-underline"><i class="fas fa-list"></i> 查看服务与价格</a>
+<button onclick="openChat()" class="inline-flex items-center gap-2 bg-white/15 text-white border-2 border-white/30 px-8 py-3.5 rounded-full font-semibold hover:bg-white/25 hover:scale-105 transition-all cursor-pointer"><i class="fas fa-comment-dots"></i> 咨询AI客服</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl mx-auto">
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"><div class="text-3xl font-bold text-white">500+</div><div class="text-white/60 text-sm mt-1">已完成订单</div></div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"><div class="text-3xl font-bold text-white">98%</div><div class="text-white/60 text-sm mt-1">客户满意度</div></div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"><div class="text-3xl font-bold text-white">24h</div><div class="text-white/60 text-sm mt-1">极速交付</div></div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"><div class="text-3xl font-bold text-white">50+</div><div class="text-white/60 text-sm mt-1">合作企业</div></div>
+</div>
+</div>
+</section>
 
-    <!-- 个人介绍区（带背景图） -->
-    <section class="hero hero-with-bg">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-avatar">💰</div>
-        <h1>Welcome wantmony</h1>
-        <p class="tagline">一个努力学习省钱的大学生 🎒</p>
-        <div class="bio">
-          月生活费1500，却想存钱看世界。<br>
-          这里记录我的极简理财实验、省钱小技巧和大学生活感悟。<br>
-          欢迎和我一起，把每一分钱都花在真正值得的地方 ✨
-        </div>
-        <div class="social-links">
-          <a href="./about.html">📖 了解更多 →</a>
-        </div>
-      </div>
-    </section>
+<!-- 服务项目 -->
+<section id="services" class="py-20 px-4 max-w-6xl mx-auto">
+<div class="text-center mb-14 fi"><span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-3">SERVICES</span><h2 class="text-3xl md:text-4xl font-bold text-gray-800">我的AI服务项目</h2><p class="text-gray-500 mt-3 max-w-lg mx-auto">基于先进AI技术，为你提供专业、高效的数字化服务</p></div>
+<div class="grid md:grid-cols-3 gap-6">
 
-    <!-- 快捷入口：计划与打卡 -->
-    <section class="quick-actions">
-      <a href="./plans.html" class="quick-card plan-card">
-        <div class="quick-icon">📋</div>
-        <div class="quick-info">
-          <h3>本周计划</h3>
-          <p>查看本周计划表格和完成情况 →</p>
-        </div>
-        <div class="quick-status">
-          <span class="badge-progress">2/7 已完成</span>
-        </div>
-      </a>
-      <a href="./plans.html#daily" class="quick-card checkin-card">
-        <div class="quick-icon">✅</div>
-        <div class="quick-info">
-          <h3>今日打卡</h3>
-          <p>早起 · 阅读 · 运动 · 记账 · 写作</p>
-        </div>
-        <div class="quick-status">
-          <span class="badge-today">今天</span>
-        </div>
-      </a>
-    </section>
+<div class="sc rounded-2xl p-8 text-center fi">
+<div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl"><i class="fas fa-file-powerpoint"></i></div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">PPT代做</h3>
+<p class="text-gray-500 text-sm mb-4">专业级PPT设计，含排版、图表、动画</p>
+<div class="flex justify-center gap-4 text-sm mb-6"><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">基础版 &yen;99</span><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">高级版 &yen;199</span></div>
+<button onclick="openChatWithService('ppt')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2.5 rounded-xl font-medium hover:shadow-lg hover:scale-[1.02] transition-all cursor-pointer border-0"><i class="fas fa-comment-dots mr-1"></i> 立即咨询</button>
+</div>
 
-    <!-- 文章列表区 -->
-    <section>
-      <h2 class="section-title">📝 最新文章</h2>
-      <div id="article-list-container" class="article-list">
-        <div class="loading">加载中...</div>
-      </div>
-      <div style="text-align:center;padding-bottom:40px;">
-        <a href="./articles.html" style="color:#2563eb;font-size:14px;font-weight:500;">查看全部文章 →</a>
-      </div>
-    </section>
+<div class="sc rounded-2xl p-8 text-center fi">
+<div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-2xl"><i class="fas fa-chart-bar"></i></div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">数据分析</h3>
+<p class="text-gray-500 text-sm mb-4">数据清洗、可视化报表、趋势分析</p>
+<div class="flex justify-center gap-4 text-sm mb-6"><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">基础版 &yen;149</span><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">高级版 &yen;299</span></div>
+<button onclick="openChatWithService('data')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2.5 rounded-xl font-medium hover:shadow-lg hover:scale-[1.02] transition-all cursor-pointer border-0"><i class="fas fa-comment-dots mr-1"></i> 立即咨询</button>
+</div>
 
-  </main>
+<div class="sc rounded-2xl p-8 text-center fi">
+<div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center text-white text-2xl"><i class="fas fa-pen-fancy"></i></div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">文案撰写</h3>
+<p class="text-gray-500 text-sm mb-4">营销文案、公众号文章、产品描述</p>
+<div class="flex justify-center gap-4 text-sm mb-6"><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">基础版 &yen;79</span><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">高级版 &yen;149</span></div>
+<button onclick="openChatWithService('copy')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2.5 rounded-xl font-medium hover:shadow-lg hover:scale-[1.02] transition-all cursor-pointer border-0"><i class="fas fa-comment-dots mr-1"></i> 立即咨询</button>
+</div>
 
-  <!-- 页脚 -->
-  <footer class="footer">
-    <p>© 2026 wantmony · 由 🦐 用心维护</p>
-  </footer>
+</div>
+</section>
 
-  <script src="js/articles-data.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/3d-effects.js"></script>
-</body>
-</html>
+<!-- 定价表 -->
+<section id="pricing" class="py-20 px-4 bg-white">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-14 fi"><span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-3">PRICING</span><h2 class="text-3xl md:text-4xl font-bold text-gray-800">明码标价 &middot; 透明消费</h2><p class="text-gray-500 mt-3 max-w-lg mx-auto">所有服务均明确定价，无隐藏费用</p></div>
+<div class="overflow-x-auto">
+<table class="w-full max-w-4xl mx-auto border-collapse fi">
+<thead><tr class="bg-gradient-to-r from-blue-600 to-blue-500 text-white"><th class="py-4 px-6 text-left font-semibold rounded-tl-xl">服务项目</th><th class="py-4 px-6 text-center font-semibold">服务内容</th><th class="py-4 px-6 text-center font-semibold">基础版</th><th class="py-4 px-6 text-center font-semibold">高级版</th><th class="py-4 px-6 text-center font-semibold rounded-tr-xl">操作</th></tr></thead>
+<tbody>
+<tr class="border-b border-blue-50 hover:bg-blue-50/50 transition"><td class="py-5 px-6 font-semibold text-gray-800"><i class="fas fa-file-powerpoint text-blue-500 mr-2"></i>PPT代做</td><td class="py-5 px-6 text-gray-600 text-sm">排版美化、图表、动画效果</td><td class="py-5 px-6 text-center font-bold text-blue-700">&yen;99 <span class="text-xs font-normal text-gray-400">/份</span></td><td class="py-5 px-6 text-center font-bold text-blue-700">&yen;199 <span class="text-xs font-normal text-gray-400">/份</span></td><td class="py-5 px-6 text-center"><button onclick="openChatWithService('ppt')" class="text-blue-500 hover:text-blue-700 text-sm font-medium bg-transparent border-0 cursor-pointer hover:underline">立即咨询 <i class="fas fa-arrow-right text-xs ml-1"></i></button></td></tr>
+<tr class="border-b border-blue-50 hover:bg-blue-50/50 transition"><td class="py-5 px-6 font-semibold text-gray-800"><i class="fas fa-chart-bar text-blue-500 mr-2"></i>数据分析</td><td class="py-5 px-6 text-gray-600 text-sm">数据清洗、报表、趋势预测</td><td class="py-5 px-6 text-center font-bold text-blue-700">&yen;149 <span class="text-xs font-normal text-gray-400">/次</span></td><td class="py-5 px-6 text-center font-bold text-blue-700">&yen;299 <span class="text-xs font-normal text-gray-400">/次</span></td><td class="py-5 px-6 text-center"><button onclick="openChatWithService('data')" class="text-blue-500 hover:text-blue-700 text-sm font-medium bg-transparent border-0 cursor-pointer hover:underline">立即咨询 <i class="fas fa-arrow-right text-xs ml-1"></i></button></td></tr>
+<tr class="border-b border-blue-50 hover:bg-blue-50/50 transition"><td class="py-5 px-6 font-semibold text-gray-800"><i class="fas fa-pen-fancy text-blue-500 mr-2"></i>文案撰写</td><td class="py-5 px-6 text-gray-600 text-sm">营销文案、公众号、产品描述</td><td class="py-5 px-6 text-center font-bold text-blue-700">&yen;79 <span class="text-xs font-normal text-gray-400">/篇</span></td><td class="py-5 px-6 text-center font-bold text-blue-700">&yen;149 <span class="text-xs font-normal text-gray-400">/篇</span></td><td class="py-5 px-6 text-center"><button onclick="openChatWithService('copy')" class="text-blue-500 hover:text-blue-700 text-sm font-medium bg-transparent border-0 cursor-pointer hover:underline">立即咨询 <i class="fas fa-arrow-right text-xs ml-1"></i></button></td></tr>
+</tbody>
+</table>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+<div class="flex items-start gap-3 p-4 fi"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0"><i class="fas fa-shield-alt"></i></div><div><h4 class="font-semibold text-gray-800 text-sm">品质保障</h4><p class="text-gray-500 text-xs mt-1">不满意无条件退款</p></div></div>
+<div class="flex items-start gap-3 p-4 fi"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0"><i class="fas fa-bolt"></i></div><div><h4 class="font-semibold text-gray-800 text-sm">极速交付</h4><p class="text-gray-500 text-xs mt-1">基础版24小时内交付</p></div></div>
+<div class="flex items-start gap-3 p-4 fi"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0"><i class="fas fa-headset"></i></div><div><h4 class="font-semibold text-gray-800 text-sm">全程售后</h4><p class="text-gray-500 text-xs mt-1">交付后7天免费修改</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- 关于我 -->
+<section id="about" class="py-20 px-4">
+<div class="max-w-4xl mx-auto text-center fi">
+<span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-3">ABOUT</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">关于虾米AI代服务</h2>
+<div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-blue-50">
+<div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-3xl">&#x1f990;</div>
+<p class="text-gray-600 leading-relaxed max-w-2xl mx-auto text-lg">我是<b class="text-blue-700">虾米</b>，一名AI代服务从业者。我利用最先进的AI技术，为个人和小微企业提供<b class="text-blue-700">PPT代做、数据分析、文案撰写</b>等高效数字化服务。</p>
+<div class="flex flex-wrap justify-center gap-6 mt-8">
+<a href="#" onclick="event.preventDefault();openChatWithContact()" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 no-underline"><i class="fab fa-qq text-xl text-blue-500"></i><span>QQ: 123456789</span></a>
+<a href="#" onclick="event.preventDefault();openChatWithContact()" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 no-underline"><i class="fab fa-weixin text-xl text-green-500"></i><span>微信: shrimp_ai</span></a>
+<a href="mailto:shrimp@example.com" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 no-underline"><i class="far fa-envelope text-xl text-blue-500"></i><span>shrimp@example.com</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 管理后台看板 -->
+<section id="admin" class="py-20 px-4 bg-gray-50">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12 fi">
+<span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-3">ADMIN</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800">&#x1f4ca; 数据统计看板</h2>
+<p class="text-gray-500 mt-3">AI客服每次对话完成后自动更新数据</p>
+<div class="mt-4 flex justify-center gap-3">
+<button onclick="resetStats()" class="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-lg text-sm hover:bg-blue-50 transition cursor-pointer">&#x1f504; 重置数据</button>
+<button onclick="simulateInquiry()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition cursor-pointer border-0">&#x1f4dd; 模拟一条咨询</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="scard text-center fi"><div class="text-3xl font-bold text-blue-600" id="totalInq">0</div><div class="text-gray-500 text-sm mt-1">总咨询量</div></div>
+<div class="scard text-center fi"><div class="text-3xl font-bold text-green-600" id="totalOrd">0</div><div class="text-gray-500 text-sm mt-1">转化订单</div></div>
+<div class="scard text-center fi"><div class="text-3xl font-bold text-purple-600" id="totalCon">0</div><div class="text-gray-500 text-sm mt-1">收集联系方式</div></div>
+<div class="scard text-center fi"><div class="text-3xl font-bold text-orange-600" id="convRate">0%</div><div class="text-gray-500 text-sm mt-1">转化率</div></div>
+</div>
+<div class="grid md:grid-cols-2 gap-6 mb-8">
+<div class="cbox fi"><h3 class="text-base font-semibold text-gray-700 mb-4"><i class="fas fa-chart-pie text-blue-500 mr-2"></i>需求分类占比</h3><canvas id="pieChart" height="200"></canvas></div>
+<div class="cbox fi"><h3 class="text-base font-semibold text-gray-700 mb-4"><i class="fas fa-chart-line text-blue-500 mr-2"></i>每周咨询量趋势（近4周）</h3><canvas id="lineChart" height="200"></canvas></div>
+</div>
+<div class="cbox fi"><h3 class="text-base font-semibold text-gray-700 mb-4"><i class="fas fa-history text-blue-500 mr-2"></i>最新咨询记录</h3><div id="logList"><p class="text-gray-400 text-sm">暂无记录</p></div></div>
+</div>
+</section>
+
+<!-- 页脚 -->
+<footer class="py-12 px-4 text-center" style="background:var(--g);">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center justify-center gap-2 mb-4"><i class="fas fa-robot text-xl" style="color:#60a5fa;"></i><span class="text-xl font-bold text-white">虾米AI代服务</span></div>
+<p class="text-white/60 text-sm">用AI技术，为你节省每一分钟</p>
+<div class="mt-6 pt-6 border-t border-white/20 text-white/40 text-xs">&copy; 2024 虾米AI代服务</div>
+</div>
+</footer>
+
+<script>
+/* 配置区 - 修改这里定制服务、价格和联系方式 */
+var CFG={biz:'虾米AI代服务',svc:{ppt:{n:'PPT代做',b:99,p:199,u:'份'},data:{n:'数据分析',b:149,p:299,u:'次'},copy:{n:'文案撰写',b:79,p:149,u:'篇'}},ct:{qq:'123456789',wx:'shrimp_ai',email:'shrimp@example.com'}};
+var pieChart=null,lineChart=null;
+var st={pie:{ppt:0,data:0,copy:0},wk:[0,0,0,0],ti:0,to:0,tc:0,logs:[]};
+var co=false,cs='init',sv=null,ci=null,wfc=false;
+
+/* 粒子背景 */
+function mkP(){var c=document.getElementById('particles');for(var i=0;i<30;i++){var p=document.createElement('div');p.className='pt';p.style.left=Math.random()*100+'%';p.style.width=p.style.height=(2+Math.random()*4)+'px';p.style.animationDuration=(10+Math.random()*20)+'s';p.style.animationDelay=Math.random()*10+'s';c.appendChild(p);}}
+
+/* 滚动淡入 */
+function obF(){if(!window.IntersectionObserver)return;var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');o.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.fi').forEach(function(e){o.observe(e);});}
+
+/* 导航栏滚动 */
+function navS(){var n=document.getElementById('navbar');window.addEventListener('scroll',function(){n.classList.toggle('s',window.scrollY>80);});}
+
+/* 聊天窗口开关 */
+function toggleChat(){var w=document.getElementById('chatWin');co=!co;w.className=co?'cw o':'cw';if(co&&cs==='init'){cs='greeting';setTimeout(function(){bT('\u4f60\u597d\uff01\u6b22\u8fce\u6765\u5230'+CFG.biz+'\uff0c\u6211\u662f\u4f60\u7684AI\u5ba2\u670d\u867e\u7c73\ud83c\udf89\uff01\u8bf7\u95ee\u4f60\u60f3\u4e86\u89e3\u54ea\u65b9\u9762\u7684\u670d\u52a1\u5462\uff1f');},500);}}
+function openChat(){if(!co)toggleChat();}
+function openChatWithService(s){sv=s;if(!co)toggleChat();else{cs='ask';showSvc();}}
+function openChatWithContact(){if(!co)toggleChat();else{cs='collect';bAskC();}}
+
+/* 机器人说话 */
+function bT(t){var c=document.getElementById('chatMsgs');var d=document.createElement('div');d.className='m b';d.innerHTML='<div class="ai"><i class="fas fa-robot"></i></div><div class="bb">'+t.replace(/\n/g,'<br>')+'</div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
+
+/* 用户说话 */
+function uS(t){var c=document.getElementById('chatMsgs');var d=document.createElement('div');d.className='m u';d.innerHTML='<div class="ai"><i class="fas fa-user"></i></div><div class="bb">'+t+'</div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
+
+/* 显示按钮选项 */
+function sOpt(os){var c=document.getElementById('chatMsgs');var d=document.createElement('div');d.className='m b';var h='<div class="ai"><i class="fas fa-robot"></i></div><div class="bb">';os.forEach(function(o){h+='<button class="ob" onclick="'+o.a+'">'+o.l+'</button> ';});h+='</div>';d.innerHTML=h;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+
+/* 显示服务选项 */
+function showSvc(){cs='select';var s=CFG.svc[sv];bT('\u4f60\u9009\u62e9\u4e86\u300c'+s.n+'\u300d\uff0c\u8bf7\u9009\u62e9\u7248\u672c\uff1a');sOpt([{l:'\u57fa\u7840\u7248 \u00a5'+s.b,a:"selV('b')"},{l:'\u9ad8\u7ea7\u7248 \u00a5'+s.p,a:"selV('p')"}]);}
+
+var svv=null;
+function selV(v){svv=v;var s=CFG.svc[sv];var pr=v==='p'?s.p:s.b;var vn=v==='p'?'\u9ad8\u7ea7\u7248':'\u57fa\u7840\u7248';uS(vn);cs='pricing';bT('\u300c'+s.n+' - '+vn+'\u300d\\n\u4ef7\u683c\uff1a<strong>\u00a5'+pr+'</strong>/'+s.u+'\\n\u670d\u52a1\u5185\u5bb9\uff1a\u4e13\u4e1a\u7ea7'+s.n+'\u670d\u52a1\\n\u4ea4\u4ed8\u65f6\u95f4\uff1a\u57fa\u7840\u724824\u5c0f\u65f6\u5185\\n\u8d28\u4fdd\uff1a\u4e0d\u6ee1\u610f\u65e0\u6761\u4ef6\u9000\u6b3e\\n\\n\u662f\u5426\u786e\u8ba4\u4e0b\u5355\uff1f');sOpt([{l:'\u2714\ufe0f \u786e\u8ba4\u4e0b\u5355',a:'cfm()'},{l:'\u274c \u518d\u8003\u8651',a:'dcl()'},{l:'\ud83d\udcac \u54a8\u8be2\u5176\u4ed6',a:'oth()'}]);}
+
+function cfm(){uS('\u786e\u8ba4\u4e0b\u5355');cs='collect';bAskC();}
+function dcl(){uS('\u518d\u8003\u8651');cs='done';bT('\u597d\u7684\uff0c\u968f\u65f6\u6b22\u8fce\u56de\u6765\uff01\\nQQ: '+CFG.ct.qq+'\\n\u5fae\u4fe1: '+CFG.ct.wx);aL(false);setTimeout(function(){cs='init';},1000);}
+function oth(){uS('\u54a8\u8be2\u5176\u4ed6');cs='greeting';bT('\u4f60\u60f3\u4e86\u89e3\u54ea\u4e2a\u670d\u52a1\uff1f');sOpt([{l:'\ud83d\udcca PPT\u4ee3\u505a',a:"openChatWithService('ppt')"},{l:'\ud83d\udcc8 \u6570\u636e\u5206\u6790',a:"openChatWithService('data')"},{l:'\u270d\ufe0f \u6587\u6848\u64b0\u5199',a:"openChatWithService('copy')"}]);}
+
+function bAskC(){bT('\u8bf7\u63d0\u4f9b\u4f60\u7684\u8054\u7cfb\u65b9\u5f0f\uff08QQ\u6216\u5fae\u4fe1\uff09\uff0c\u6211\u5c06\u5c3d\u5feb\u8054\u7cfb\u4f60\uff01\\n\\n\u4e5f\u53ef\u76f4\u63a5\u6dfb\u52a0\u6211\\nQQ: '+CFG.ct.qq+'\\n\u5fae\u4fe1: '+CFG.ct.wx);wfc=true;}
+
+function uC(t){uS(t);if(wfc){wfc=false;ci=t;cs='done';aL(true);bT('\u611f\u8c22\u54a8\u8be2\uff01\u5df2\u8bb0\u5f55\u8054\u7cfb\u65b9\u5f0f\uff0c\u6211\u5c06\u5c3d\u5feb\u8054\u7cfb\u4f60\uff01\\n\\n\u8054\u7cfb\u65b9\u5f0f: '+t+'\\n\u670d\u52a1: '+CFG.svc[sv||'ppt'].n);setTimeout(function(){cs='init';sv=null;},2000);}else if(cs==='greeting'||cs==='init'){bT('\u4f60\u60f3\u4e86\u89e3\u54ea\u4e2a\u670d\u52a1\uff1f');sOpt([{l:'\ud83d\udcca PPT\u4ee3\u505a',a:"openChatWithService('ppt')"},{l:'\ud83d\udcc8 \u6570\u636e\u5206\u6790',a:"openChatWithService('data')"},{l:'\u270d\ufe0f \u6587\u6848\u64b0\u5199',a:"openChatWithService('copy')"}]);}}
+
+function sendMsg(){var i=document.getElementById('chatInput');var t=i.value.trim();if(!t)return;i.value='';uC(t);}
+
+/* 数据统计 */
+function aL(o){if(!sv)sv='ppt';st.pie[sv]++;st.ti++;if(o)st.to++;if(ci)st.tc++;st.wk[3]++;var n=new Date();st.logs.unshift({time:n.toLocaleString('zh-CN'),svc:CFG.svc[sv].n,ct:ci||'-',ord:o});updD();}
+
+function updD(){var ti=document.getElementById('totalInq');var to=document.getElementById('totalOrd');var tc=document.getElementById('totalCon');var cr=document.getElementById('convRate');if(ti)ti.textContent=st.ti;if(to)to.textContent=st.to;if(tc)tc.textContent=st.tc;if(cr){var r=st.ti>0?Math.round(st.to/st.ti*100):0;cr.textContent=r+'%';}if(pieChart){pieChart.data.datasets[0].data=[st.pie.ppt,st.pie.data,st.pie.copy];pieChart.update();}if(lineChart){lineChart.data.datasets[0].data=st.wk;lineChart.update();}var ll=document.getElementById('logList');if(ll){if(st.logs.length===0)ll.innerHTML='<p class="text-gray-400 text-sm">\u6682\u65e0\u8bb0\u5f55</p>';else{var h='';st.logs.slice(0,20).forEach(function(l){h+='<div class="le"><time>'+l.time+'</time>'+(l.ord?'\u2714\ufe0f ':'\ud83d\udcac ')+l.svc+(l.ct!=='-'?' | \u8054\u7cfb: '+l.ct:'')+'</div>';});ll.innerHTML=h;}}}
+
+function simulateInquiry(){var ss=['ppt','data','copy'];sv=ss[Math.floor(Math.random()*ss.length)];ci='\u6a21\u62df\u7528\u6237'+Math.floor(Math.random()*1000);aL(Math.random()>0.3);}
+function resetStats(){st={pie:{ppt:0,data:0,copy:0},wk:[0,0,0,0],ti:0,to:0,tc:0,logs:[]};updD();}
+
+function initCharts(){pieChart=new Chart(document.getElementById('pieChart').getContext('2d'),{type:'pie',data:{labels:['PPT\u4ee3\u505a','\u6570\u636e\u5206\u6790','\u6587\u6848\u64b0\u5199'],datasets:[{data:[st.pie.ppt,st.pie.data,st.pie.copy],backgroundColor:['#3b82f6','#8b5cf6','#06b6d4'],borderWidth:2,borderColor:'#fff'}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{padding:16,font:{size:12}}}}}});lineChart=new Chart(document.getElementById('lineChart').getContext('2d'),{type:'line',data:{labels:['\u7b2c1\u5468','\u7b2c2\u5468','\u7b2c3\u5468','\u672c\u5468'],datasets:[{label:'\u54a8\u8be2\u91cf',data:st.wk,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.1)',fill:true,tension:0.4,pointBackgroundColor:'#3b82f6',pointRadius:4}]},options:{responsive:true,scales:{y:{beginAtZero:true,ticks:{stepSize:1,precision:0}}}}});}
+
+/* 初始化 */
+mkP();obF();navS();initCharts();updD();
+document.getElementById('mBtn').addEventListener('click',function(){var m=document.getElementById('mMenu');m.className=m.className.indexOf('hidden')>=0?'md:hidden bg-blue-900/95 px-4 pb-4':'md:hidden hidden bg-blue-900/95 px-4 pb-4';});
+</script>
+
+<!-- AI聊天按钮 -->
+<button class="cb" id="chatBtn" onclick="toggleChat()"><i class="fas fa-comment-dots"></i><span class="d"></span></button>
+
+<!-- AI聊天窗口 -->
+<div class="cw" id="chatWin">
+<div class="ch">
+<div class="av"><i class="fas fa-robot"></i></div>
+<div><div class="font-semibold text-sm">虾米AI客服</div><div class="text-xs text-white/70">在线 &middot; 即刻回复</div></div>
+<button class="xb" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+</div>
+<div class="cm" id="chatMsgs"></div>
+<div class="ci">
+<input type="text" id="chatInput" placeholder="输入你的问题..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+</body></html>
